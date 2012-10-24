@@ -1,0 +1,110 @@
+/* Fuentes */
+@font-face {
+	font-family: 'Futura';
+	src: url('font/futura.ttc');
+}
+@font-face {
+	font-family: 'FuturaEB';
+	src: url('font/Futura-eb.ttf');
+}
+
+/* General */
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+body {
+	background:url('../images/home/fondo.jpg') center 0 no-repeat;
+	background-size: cover;
+	font-family: 'Arial', 'Verdana';
+	font-weight: bold;
+	line-height: normal;
+}
+
+a, a:hover, a:active, a:link,  a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#page {
+	z-index: 2;
+	position: relative;
+	min-height: 100%;
+	height: auto !important;
+}
+
+
+/* Header */
+
+header {
+	width: 100%;
+}
+
+header #top * {
+	display: inline-block;
+}
+
+header .menu {
+	background:url('../images/header/menu/fondo.png') 0 0 no-repeat;
+	background-size: cover;
+	width: 467px;
+	height: 31px;
+	float: right;
+	margin-top: 15px;
+}
+
+header #bottom {
+	margin-top: -4px;
+}
+
+/* Contenido */
+#contenido {
+	padding-bottom: 46px;
+}
+
+/* Footer */
+footer {
+	color: #FFF;
+	width: 100%;
+	height: 46px;
+	position: absolute;
+	bottom: 0 !important;
+	bottom: -1px;
+}
+
+footer * {
+	display: inline-block;
+	font-size: 8pt;
+}
+
+footer #fooarriba {
+	width: 100%
+}
+
+footer #fooarriba img{
+	float: right;
+	margin-right: 20px;
+}
+
+footer #fooabajo {
+	background-color: #000;
+	width: 100%;
+}
+
+footer #fooabajo #derecha {
+	margin-left: 10px;
+}
+
+footer #fooabajo #izquierda {
+	float: right;
+	margin-right: 10px;
+}
+
+footer #fooabajo #izquierda img {
+	margin-top: 3px;
+}

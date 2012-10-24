@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Meta -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>ReFrame</title>
+
+		<!-- CSS -->
+		<link href="css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/bgstretcher.css" rel="stylesheet" type="text/css" />
+
+		<!-- JS -->
+		<script src="js/jquery-1.8.2.min.js"></script>
+		<script src="js/jquery.queryloader2.js"></script>
+		<script src="js/bgstretcher.js"></script>
+		<script>
+		$(document).ready(function(){
+			$("body").queryLoader2({ 
+                backgroundColor: '#FFF', 
+                barColor: '#000',
+                completeAnimation: 'grow'
+            });
+
+			//  Initialize Backgound Stretcher
+			$(document).bgStretcher({
+				images: ['images/home/fondo.jpg'], imageWidth: 1600, imageHeight: 900
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<div id="page">
+			<header>
+				<div id="top">
+					<img src="images/header/logo.png" />
+					<div class="menu">
+
+					</div>
+				</div>
+				<img id="bottom" src="images/header/sm.png" />
+			</header>
+			<div id="contenido">
+				<img src="images/home/contenido.png" />
+			</div>
+			<footer>
+				<div id="fooarriba"><img src="images/footer/menu.png" /></div>
+				<div id="fooabajo">
+					<div id="derecha">©2012 REFRAME™</div>
+					<div id="izquierda">
+						<img src="images/footer/facebook.png" />
+						<img src="images/footer/twitter.png" />
+						<a href="mailito:contacto@reframe.cl">CONTACTO@REFRAME.CL</a> / <span style="color: #cccccc;">SANTIAGO, CHILE.</span>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
