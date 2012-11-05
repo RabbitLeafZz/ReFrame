@@ -11,23 +11,13 @@
 		<link href="css/bgstretcher.css" rel="stylesheet" type="text/css" />
 
 		<!-- JS -->
+		<link href='http://fonts.googleapis.com/css?family=Aldrich' 				rel='stylesheet'>
+		<link href="css/screen.css" rel="stylesheet">
+  		<script src="js/lib/modernizr.min.js"></script>
 		<script src="js/jquery-1.8.2.min.js"></script>
 		<script src="js/jquery.queryloader2.js"></script>
 		<script src="js/bgstretcher.js"></script>
-		<script>
-		$(document).ready(function(){
-			$("body").queryLoader2({ 
-                backgroundColor: '#FFF', 
-                barColor: '#000',
-                completeAnimation: 'grow'
-            });
-
-			//  Initialize Backgound Stretcher
-			$(document).bgStretcher({
-				images: ['images/home/fondo.jpg'], imageWidth: 1600, imageHeight: 900
-			});
-		});
-		</script>
+		
 	</head>
 	<body>
 		<div id="page">
@@ -40,8 +30,36 @@
 				</div>
 				<img id="bottom" src="images/header/sm.png" />
 			</header>
-			<div id="contenido">
+			
+		<div id="contenido">
 				<img src="images/home/contenido.png" />
+				
+				    <div id="viewport-shadow">
+		
+		         	  <a href="#" id="prev" title="go to the next slide"></a>
+		          	  <a href="#" id="next" title="go to the next slide"></a>
+		
+		         		 <div id="viewport">
+		            		<div id="box">
+		              		<figure class="slide">
+		                		<img src="images/home/fondo.jpg">
+		              		</figure>
+		              		<figure class="slide">
+		                		<img src="images/servicios/fondo.jpg">
+		              		</figure>
+		              		<figure class="slide">
+		                		<img src="images/productos/fondo.jpg">
+		              		</figure>
+		             	 	<figure class="slide">
+		                		<img src="images/clientes/fondo.jpg">
+		              		</figure>
+		              		<figure class="slide">
+		                		<img src="images/casos/fondo.jpg">
+		              		</figure>
+		            	</div>
+          </div>
+
+      
 			</div>
 			<footer>
 				<div id="fooarriba"><img src="images/footer/menu.png" /></div>
@@ -55,5 +73,67 @@
 				</div>
 			</footer>
 		</div>
+		
+	<!-- SCRIPT 3D BOX-->
+	<script src="//code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/lib/jquery-1.7.2.min.js"><\/script>')</script>
+		<script src="js/box-slider-all.jquery.min.js"></script>
+		<script>
+
+		  $(function () {
+
+        var $box = $('#box')
+          , $indicators = $('.goto-slide')
+          , $effects = $('.effect')
+          , $timeIndicator = $('#time-indicator')
+          , slideInterval = 5000;
+
+        var switchIndicator = function ($c, $n, currIndex, nextIndex) {
+          $timeIndicator.stop().css('width', 0);
+          $indicators.removeClass('current').eq(nextIndex).addClass('current');
+        };
+
+        var startTimeIndicator = function () {
+          $timeIndicator.animate({width: '680px'}, slideInterval);
+        };
+
+        // initialize the plugin with the desired settings
+        $box.boxSlider({
+            speed: 1000
+          , autoScroll: true
+          , timeout: slideInterval
+          , next: '#next'
+          , prev: '#prev'
+          , pause: '#pause'
+          , effect: 'scrollVert3d'
+          , blindCount: 15
+          , onbefore: switchIndicator
+          , onafter: startTimeIndicator
+        });
+
+        startTimeIndicator();
+
+        // pagination isn't built in simply because it's easy to
+        // roll your own with the plugin API methods
+        $('#controls').on('click', '.goto-slide', function (ev) {
+          $box.boxSlider('showSlide', $(this).data('slideindex'));
+          ev.preventDefault();
+        });
+
+        $('#effect-list').on('click', '.effect', function (ev) {
+          var $effect = $(this);
+
+          $box.boxSlider('option', 'effect', $effect.data('fx'));
+          $effects.removeClass('current');
+          $effect.addClass('current');
+
+          switchIndicator(null, null, 0, 0);
+          ev.preventDefault();
+        });
+
+		  });
+
+		</script>
+
 	</body>
 </html>
