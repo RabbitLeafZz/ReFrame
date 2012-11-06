@@ -15,6 +15,30 @@ html, body {
 	height: 100%;
 }
 
+ Fuentes */
+@font-face {
+	font-family: 'Futura';
+	src: url('font/futura.ttc');
+}
+@font-face {
+	font-family: 'FuturaEB';
+	src: url('font/Futura-eb.ttf');
+}
+
+/* General */
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+body {
+	background:url('../images/home/fondo.jpg') center 0 no-repeat;
+	background-size: cover;
+	font-family: 'Arial', 'Verdana';
+	font-weight: bold;
+	line-height: normal;
+}
+
 a, a:hover, a:active, a:link,  a:visited {
 	color: #FFF;
 	text-decoration: none;
@@ -43,22 +67,32 @@ header #top * {
 }
 
 header .menu {
-	background:url('../images/header/menu/fondo.png') 0 0 no-repeat;
-	background-size: cover;
-	width: 467px;
-	height: 31px;
+	background-color:black;
+	font-size: 14pt;
+	text-indent: 0.15em;
 	float: right;
 	margin-top: 15px;
+	color: white;
+	
 }
 
 header #bottom {
+	
+	float: left;
+	background-color:white;
+	font-size: 14pt;
+	text-indent: 0.16em;
+	float: right;
+	color: black;
 	margin-top: -4px;
+	margin-right: 980px;
+
 }
 
 /* Contenido */
 #contenido {
 	padding-bottom: 46px;
-	
+	margin-top:40px;
 }
 
 /* Footer */
@@ -91,7 +125,7 @@ footer #fooabajo {
 }
 
 footer #fooabajo #derecha {
-	margin-left: 10px;
+	margin-left: 4px;
 }
 
 footer #fooabajo #izquierda {
