@@ -77,16 +77,15 @@ header .menu {
 }
 
 header #bottom {
-	
-	float: left;
-	background-color:white;
-	font-size: 14pt;
+	background-color: white;
+	font-size: 17pt;
 	text-indent: 0.16em;
 	float: right;
 	color: black;
 	margin-top: -4px;
 	margin-right: 980px;
-
+	float: left;
+	width: 279px;
 }
 
 /* Contenido */
