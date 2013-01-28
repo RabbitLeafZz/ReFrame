@@ -5,84 +5,453 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>ReFrame</title>
 
+		<!-- Favicon -->
+		<link rel="icon" href="favicon.ico"  />
 		<!-- CSS -->
 		<link href="css/reset.css" rel="stylesheet" type="text/css" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
-		<link href="css/bgstretcher.css" rel="stylesheet" type="text/css" />
-
+		<!--<link href="css/bgstretcher.css" rel="stylesheet" type="text/css" />  -->
+		<link href="css/masonry.css" rel="stylesheet" type="text/css" />
+		<link href="css/lightbox.css" rel="stylesheet" />
 		<!-- JS -->
 		<link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
-	<!--	<link href="css/screen.css" rel="stylesheet"> -->
+		<!--	<link href="css/screen.css" rel="stylesheet"> -->
 		<script src="js/jquery-1.8.2.min.js"></script>
 		<script src="js/jquery.queryloader2.js"></script>
-		<script src="js/bgstretcher.js"></script>
+		<script src="js/bgstretcher.js"></script> 
+		<script src="js/lightbox.js"></script>
 		
+		<!-- <script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script> -->
+		<script type="text/javascript" src="http://www.paginaswebynnova.com/lib/js-ynnova.js"></script>
+		<script type="text/javascript">
+			BrowserDetect.init();
+		</script>
+
 		<script>
+			var primero = true;
 			$(document).ready(function(){
 
-				$('.menu div').click(function() {
+				$("body").queryLoader2({ 
+                    backgroundColor: '#000', 
+                    barColor: '#FFF'
+                });
+
+				$(".secciones").hide();
+				$('#home').show(3000);
+
+				$('.menu-click').click(function(event) {
+					event.preventDefault();
 					var mostrar = $(this).attr('id');
 					mostrar = mostrar.replace('menu-', '');
-					$(".secciones").hide("slow", function() {
-						$('#'+mostrar).show(3000);
+					$('.secciones').each(function() {
+						if ($(this).css('display') == 'block') {
+							$(this).hide('slow', function() {
+								if(mostrar == 'servicios' && BrowserDetect.browser == 'Firefox'){
+                                   	$('.div-seccion').css('margin', '0');
+                                   	$('.div-seccion').css('width', '0');
+                                   	$('.div-seccion').css('height', '20%');
+                                   	$('.click-icono').css('margin', '');
+                                  	$('.click-icono').css('width', '');
+                                   	primero = true;
+                                   	$('.sub-secciones').hide();
+                                   	$('#'+mostrar).show(function() {
+	                                  	$('#radiografia').animate({'margin-left':'136px', 'margin-top':'10px'},1500);
+
+	                           			$('#identidad').animate({'margin-left':'31%', 'margin-top':'15%'},1500);
+
+	                           			$('#combustible').animate({'margin-left':'58%', 'margin-top':'15%'},1500);                                                                                                                                            
+	                           			$('#reframe').animate({'margin-left':'79%', 'margin-top':''},1500);
+                                    });
+
+                               	} else if (mostrar == 'servicios') {
+									$('.div-seccion').css('margin', '0');
+									$('.div-seccion').css('width', '0');
+									$('.div-seccion').css('height', '20%');
+									$('.click-icono').css('margin', '');
+									$('.click-icono').css('width', '');
+									primero = true;
+									$('.sub-secciones').hide();
+									$('#'+mostrar).show(function() {
+										$('#radiografia').animate({'margin-left':'136px', 'margin-top':'10px'},1500);
+ 
+                    					$('#identidad').animate({'margin-left':'31%', 'margin-top':'30%'},1500);
+ 
+					                    $('#combustible').animate({'margin-left':'58%', 'margin-top':'30%'},1500);					                    										
+					                    $('#reframe').animate({'margin-left':'79%', 'margin-top':''},1500);
+									});
+								}else if(mostrar == 'casos'){
+									$('#'+mostrar).show(3000, function(){
+										$('#container').isotope('reLayout');	//Después de la animación de mostrar, reordenar los elementos.
+									}
+									);
+								 }
+								else {
+									$('#'+mostrar).show(3000);
+								}
+								$('#page').fadeTo('slow', 0.3, function()
+                               	{
+                                   	$(this).css('background-image', 'url(images/'+mostrar+'/fondo.jpg)');
+                               	}).fadeTo('slow', 1);
+								
+								
+							});
+						}
 					});
 				});
    			});
 		</script>
+		
+
+		
+		<!-- MENU SERVICIOS -->	
+			<script>
+			$(document).ready(function(){
+ 	        	$("#menu-about").click(function(event){
+	 	        	event.preventDefault();
+	 	      		$("#home").hide("slow");
+ 	         	});
+
+
+ 	         	<!--Iconos-->
+ 	 			$(".click-icono").click(function(event){
+	 	       		event.preventDefault();
+	 	       		animar_iconos();
+	 	       		var sub = $(this).attr('id');
+	 	        	sub = sub.replace('img', '');
+	 	        	if (primero) {
+	 	        		$("#sub"+sub).show(2000);
+	 	        		primero = false;
+	 	        	} else {
+	 	        		$('.sub-secciones').each(function() {
+	 	        		if ($(this).css('display') == 'block') {
+	 	        			$(this).hide(1000, function() {
+	 	        				$("#sub"+sub).show(2000);
+	 	        			});
+	 	        		}
+	 	        	});
+	 	        	}
+          		});
+      		});
+
+			function animar_iconos() {
+				$('#img-radiografia').animate({'margin-left':'-128px', 'margin-top':'-19px','width':'110px'},1500);
+ 										
+ 				$('#identidad').animate({'margin-left':'386px', 'margin-top':'108px'},1500);
+                $('#img-identidad').animate({'margin-left':'-378px', 'margin-top':'-3px','width':'110px'},1500);
+ 
+			    $('#combustible').animate({'margin-left':'135px', 'margin-top':'281px'},1500);
+			    $('#img-combustible').animate({'margin-left':'-128px', 'margin-top':'-63px','width':'110px'},1500);
+					                    
+			    $('#reframe').animate({'margin-left':'-128px', 'margin-top':'-5px'},1500);			  		
+			    $('#img-reframe').animate({'margin-left':'135px', 'margin-top':'336px','width':'110px'},1500);
+			}
+		</script>
+		
 	</head>
 	
 	<body>
 		<div id="page">
 			<header>
+				
+				<!--HOME-->
 				<div id="top">
-					<img src="images/header/logo.png" />
+					<div id="menu-home" class="menu-click" style="cursor:pointer;"><img src="images/header/logo.png" /></div>
 					<div class="menu">
-						<div id="menu-home" style="cursor:s-resize">ABOUT</div>
-						<div id="menu-servicios" style="cursor:s-resize" >SERVICIOS</div>
-						<div id="menu-productos" style="cursor:s-resize" >PRODUCTOS</div>
-						<div id="menu-clientes" style="cursor:s-resize" >CLIENTES</div>
-						<div id="menu-casos" style="cursor:s-resize" >CASOS</div>
-						<div id="menu-contacto" style="cursor:s-resize" >CONTACTO</div>
-
+						<div id="menu-home" class="menu-click" style="cursor:pointer;">ABOUT</div>
+						<div id="menu-servicios" class="menu-click" style="cursor:pointer;" >SERVICIOS</div>
+						<div id="menu-productos" class="menu-click" style="cursor:pointer;" >PRODUCTOS</div>
+						<div id="menu-clientes" class="menu-click" style="cursor:pointer;" >CLIENTES</div>
+						<div id="menu-casos" class="menu-click" style="cursor:pointer;" >CASOS</div>
+						<!--<div id="menu-team" class="menu-click" style="cursor:pointer;" >TEAM</div>-->
+						<div id="menu-contacto" class="menu-click" style="cursor:pointer;" >CONTACTO</div>
 					</div>
-				</div>
+				
 				<div id="bottom">SOCIAL MEDIA AGENCY</div>
-				<!-- <img id="bottom" src="images/header/sm.png" /> -->
 			</header>
 			
-			
-		<div id="contenido">   		            	
-			<div id="home" class="secciones">
-				<img src="images/home/contenido.png" />
-          	</div>
+			<!--ABOUT-->
+			<div id="contenido">   		            	
+				<div id="home" class="secciones">
+				<!--<img src="images/home/contenido.png" /> -->
+				<div class="about-line first" >"CREANDO CONTENIDO PARA CONECTAR LAS AUDIENCIAS CON LAS MARCAS"</div>
+				<div class="about-line">SOMOS UNA AGENCIA DE SOCIAL MEDIA QUE COMBINA EL CONTENIDO,</div>
+				<div class="about-line">ESTRATEGIA DE MARCA CON ENTRETENIMIENTO Y VALORES DE RELEVANCIA</div>
+				<div class="about-line"> CULTURAL.</div>
+				
+				</div>
+		
+			<!--SERVICIOS-->
+          	<div id="servicios" class="secciones">
+				<div id="radiografia" class="div-seccion" style="cursor:pointer;" >
+					<img id="img-radiografia" class="click-icono" src="images/servicios/200x200_radiografia.png" />
+				</div>
+				<div id="sub-radiografia" class="sub-secciones" style="display:none">
+					<div>
+						<span style="background-color: black;color:white;" >RADIOGRAFIA</span><br>
+						<span>DIAGNOSTICO DIGITAL</span><br>
+						<span>OBJETIVOS Y METAS </span><br>
+						<span>TARGET</span><br>
+						<span>INSIGHT</span><br>
+						<span>BRIEF DIGITAL DE LA MARCA</span>
+					</div>
+				</div>
+				
+				<div id="identidad" class="div-seccion" style="cursor:pointer;">
+					<img id="img-identidad" class="click-icono" src="images/servicios/200x200_identidad.png" />
+				</div>
+				<div id="sub-identidad" class="sub-secciones" style="display:none">
+					<div>
+						<span style="background-color: black;color:white;" >IDENTIDAD DIGITAL</span><br>
+						<span>PERSONALIDAD</span><br>
+						<span>VOZ, TONO Y ESTILO</span><br>
+						<span>TENDENCIA</span><br>
+						<span>USUARIO/CONSUMIDOR</span><br>
+						<span>ELABORACION DE LA ESTRATEGIA</span>
+					</div>
+				</div>
+				
+				<div id="combustible" class="div-seccion" style="cursor:pointer;">
+					<img id="img-combustible" class="click-icono" src="images/servicios/200x200_combustible.png" />
+				</div>
+				<div id="sub-combustible" class="sub-secciones" style="display:none">
+					<div>
+						<span style="background-color: black;color:white;" >COMBUSTIBLE</span><br>
+						<span>COMMUNITY MANAGER</span><br>
+						<span>DISEÑO REDES SOCIALES</span><br>
+						<span>SOCIAL MEDIA PR</span><br>
+						<span>CAMPAÑAS CREATIVAS</span><br>
+						<span>FACEBOOK ADS/APPS</span><br>
+						<span>SOCIAL MEDIA EMBAJADORES DE MARCA</span><br>
+						<span>SOCIAL MEDIA PARTNERSHIP</span><br>
+						<span>MONITOREO</span>
+					</div>
+				</div>
+				
+				<div id="reframe" class="div-seccion" style="cursor:pointer;">
+					<img id="img-reframe" class="click-icono" src="images/servicios/200x200_reframe.png" />
+				</div>
+				<div id="sub-reframe"  class="sub-secciones" style="display:none"> 
+					<div>
+						<span style="background-color: black;color:white;" >REFRAME</span><br>
+						<span>RADIOGRAFIA</span><br>
+						<span>IDENTIDAD DIGITAL</span><br>
+						<span>COMBUSTIBLE</span><br>
+						<span>DESARROLLO PROGRAMACIÓN</span><br>
+						<span>ANALISÍS ROI</span>
+					</div>
+				</div>
 
-          	<div id="servicios" style="display:none" class="secciones">
-				<img src="images/home/contenido.png" />
           	</div>
           	
-          	 <div id="productos" style="display:none" class="secciones">
-				<img src="images/home/contenido.png" />
-          	</div>
-          	<div id="clientes" style="display:none" class="secciones">
-				<img src="images/home/contenido.png" />
+         	<!-- PRODUCTOS -->
+          	 <div id="productos" class="secciones">
+				<div id="follow-keywords"  >
+					<img src="images/productos/FK1.png" style="width:80%"/>
+				</div>
+			</div>
+					
+          	<!--CLIENTES-->
+          	<div id="clientes" class="secciones">
+          		<br>
+				<img style="background-color: white; width:100%; margin-top:10px;" src="images/clientes/logos/maito_clientes-01.png" />
+				<!-- <img src="images/clientes/logos/bmw.png" /> -->
+				<!--<img src="images/clientes/logos/canal13.png" /> -->
+				<!-- <img src="images/clientes/logos/cencosud.png" /> -->
+				<!-- <img src="images/clientes/logos/elinmobiliario.png" /> -->
+				<!--<img src="images/clientes/logos/lan.png" /> -->
+				<!--<img src="images/clientes/logos/progames.png" /> -->
+				<!-- <img src="images/clientes/logos/ultrachile.png" /> -->
+				<!--<img src="images/clientes/logos/streetmachine.png" /> -->
           	</div>
           	
-          	<div id="casos" style="display:none" class="secciones">
-				<img src="images/home/contenido.png" />
+          	<!--CASOS-->
+          	<div id="casos" class="secciones" >
+			  <div id="container" class="photos clearfix" >
+				
+				  <div class="photo solid">
+					<a href="images/casos/1.png" rel="lightbox" title="Lan Chile Juego Navidad"> <img src="images/casos/1.png" /> <p> Lan Chile Juego Navidad </p> </a>
+				  </div>
+				
+				<div class="photo solid">
+					<a href="images/casos/2.png" rel="lightbox" title="Ciclon Tarjetas Mas"> <img src="images/casos/2.png" /> <p> Ciclon Tarjetas Mas </p></a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/3.png" rel="lightbox" title="Create Bikes"> <img src="images/casos/3.png" /><p>Create Bikes</p> </a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/4.png" rel="lightbox" title="sinoscasamos.cl"> <img src="images/casos/4.png" /> <p>sinoscasamos.cl</p></a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/5.png" rel="lightbox" title="sinoscasamos.cl Blog"> <img src="images/casos/5.png" /> <p>sinoscasamos.cl Blog</p></a>
+				  </div>
+				  
+				  <div class="photo ">
+					<a href="images/casos/17.png" rel="lightbox" title="Pickcel Mobile App"> <img src="images/casos/17.png" /> <p>Pickcel Mobile App</p></a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/6.png" rel="lightbox" title="Marittimo"> <img src="images/casos/6.png" /> <p>Marittimo</p> </a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/7.png" rel="lightbox" title="Lollapalooza"> <img src="images/casos/7.png" /><p>Lollapalooza</p> </a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/8.png" rel="lightbox" title="Lollapalooza"> <img src="images/casos/8.png" /> <p>Lollapalooza</p> </a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/9.png" rel="lightbox" title="Nikon Chile"> <img src="images/casos/9.png" /> <p>Nikon Chile</p></a>
+				  </div>
+				 
+				  
+				  <div class="photo solid">
+					<a href="images/casos/10.png" rel="lightbox" title="Mystery Land Facebook App"> <img src="images/casos/10.png" /><p>Mystery Land Facebook App</p> </a>
+				  </div>
+				  
+				  <div class="photo ">
+					<a href="images/casos/16.png" rel="lightbox" title="Pickcel Mobile App"> <img src="images/casos/16.png" /> <p>Pickcel Mobile App</p> </a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/11.png" rel="lightbox" title="Creamfield Facebook App"> <img src="images/casos/11.png" /> <p>Creamfield Facebook App</p></a>
+				  </div>
+				  
+				  <div class="photo ">
+					<a href="images/casos/18.png" rel="lightbox" title="Pickcel Mobile App"> <img src="images/casos/18.png" /><p>Pickcel Mobile App</p> </a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/12.png" rel="lightbox" title="Aoni Facebook Tab"> <img src="images/casos/12.png" /> <p>Aoni Facebook Tab</p></a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/13.png" rel="lightbox" title="Columbia Mobile App"> <img src="images/casos/13.png" /> <p>Columbia Mobile App</p></a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/14.png" rel="lightbox" title="Columbia Mobile App"> <img src="images/casos/14.png" /> <p>Columbia Mobile App</p></a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/15.png" rel="lightbox" title="Lollapalooza"> <img src="images/casos/15.png" /> <p>Lollapalooza</p></a>
+				  </div>
+				  
+				  
+				  
+				
+			  </div> <!-- #container -->
+			  
+			  
+			  <script src="js/jquery.isotope.min.js"></script>
+			   <script>
+					$(function(){
+					
+					$.Isotope.prototype._getCenteredMasonryColumns = function() {
+					this.width = this.element.width();
+					
+					var parentWidth = this.element.parent().width();
+					
+								  // i.e. options.masonry && options.masonry.columnWidth
+					var colW = this.options.masonry && this.options.masonry.columnWidth ||
+								  // or use the size of the first item
+								  this.$filteredAtoms.outerWidth(true) ||
+								  // if there's no items, use size of container
+								  parentWidth;
+					
+					var cols = Math.floor( parentWidth / colW );
+					cols = Math.max( cols, 1 );
+
+					// i.e. this.masonry.cols = ....
+					this.masonry.cols = cols;
+					// i.e. this.masonry.columnWidth = ...
+					this.masonry.columnWidth = colW;
+				  };
+				  
+				  $.Isotope.prototype._masonryReset = function() {
+					// layout-specific props
+					this.masonry = {};
+					// FIXME shouldn't have to call this again
+					this._getCenteredMasonryColumns();
+					var i = this.masonry.cols;
+					this.masonry.colYs = [];
+					while (i--) {
+					  this.masonry.colYs.push( 0 );
+					}
+				  };
+
+				  $.Isotope.prototype._masonryResizeChanged = function() {
+					var prevColCount = this.masonry.cols;
+					// get updated colCount
+					this._getCenteredMasonryColumns();
+					return ( this.masonry.cols !== prevColCount );
+				  };
+				  
+				  $.Isotope.prototype._masonryGetContainerSize = function() {
+					var unusedCols = 0,
+						i = this.masonry.cols;
+					// count unused columns
+					while ( --i ) {
+					  if ( this.masonry.colYs[i] !== 0 ) {
+						break;
+					  }
+					  unusedCols++;
+					}
+					
+					return {
+						  height : Math.max.apply( Math, this.masonry.colYs ),
+						  // fit container to columns that have been used;
+						  width : (this.masonry.cols - unusedCols) * this.masonry.columnWidth
+						};
+				  };
+					
+
+					  var $container = $('#container');
+					
+					  $container.imagesLoaded( function(){
+						$container.isotope({
+						  itemSelector : '.photo'
+						});
+					  });
+					
+					
+					});
+			  </script>
           	</div>
           	
-          	<div id="contacto" style="display:none" class="secciones">
-				<img src="images/home/contenido.png" />
+          	<!--CONTACTO-->
+          	<div id="contacto" class="secciones">
+					<div id="sub-contacto"  class="sub-secciones-contacto" style="display:"> 
+						<div>
+							<span>CONTACTO@REFRAME.CL</span><br>
+							<!--Skype 'Skype Me!™' button http://www.skype.com/go/skypebuttons-->
+							<!--<a href="skype:ReFrameSCL?call"><img alt="Skype Me!™" id="skype" src="images/contacto/skype-ico.png" /></a>--> 
+							<span id="skype-2" style="font-size:35px;color:;">REFRAMESCL</span><br></br>
+							<span style="font-size:30px;color:; font-style: cursive;">ROMAN DIAZ #170</span><br>
+							<span style="font-size:30px;color:;font-style: cursive;">PROVIDENCIA, SANTIAGO.</span><br>
+							<span style="font-size:25px;color:;">CHILE.</span>
+						</div>
+					</div>
           	</div>
          </div>
          
+         	<!--FOOTER-->
 			<footer>
-				<div id="fooarriba"><img src="images/footer/menu.png" /></div>
+				<div id="fooarriba">
+					<a href="http://www.reframelabs.cl/" target="_blank"><span style="font-size:20px;">LABS</span></a>
+					<a href="http://blog.reframe.cl" target="_blank"><span style="font-size:20px;">BLOG</span></a>
+					<span style="font-size:20px;">MAILING</span>
+					<!-- <img src="images/footer/menu.png" /> -->
+				</div>
 				<div id="fooabajo">
 					<div id="derecha">©2012 REFRAME™</div>
 					<div id="izquierda">
-						<img src="images/footer/facebook.png" />
-						<img src="images/footer/twitter.png" />
+						<a href="http://www.facebook.com/ReFrameCL" target="_blank"><img src="images/footer/facebook.png" /> </a>
+						<a href="https://twitter.com/ReFrameCL" target="_blank"><img src="images/footer/twitter.png" /></a>
 						<a href="mailito:contacto@reframe.cl">CONTACTO@REFRAME.CL</a> / <span style="color: #cccccc;">SANTIAGO, CHILE.</span>
 					</div>
 				</div>

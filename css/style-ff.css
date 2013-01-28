@@ -15,7 +15,7 @@ html, body {
 	height: 100%;
 }
 
- /*Fuentes*/
+ Fuentes */
 @font-face {
 	font-family: 'Futura';
 	src: url('font/futura.ttc');
@@ -30,8 +30,6 @@ html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	/*min-height: 900px;*/
-	min-width: 1024px;
 }
 body {
 	background-color: #000;
@@ -51,8 +49,7 @@ a:hover {
 
 #page {
 	background:url('../images/home/fondo.jpg') center 0 no-repeat;
-	background-size: 100%;
-	background-attachment:fixed;
+	background-size: cover;
 	z-index: 2;
 	position: relative;
 	min-height: 100%;
@@ -64,7 +61,6 @@ a:hover {
 
 header {
 	width: 100%;
-	min-width: 1024px;
 }
 
 header #top * {
@@ -128,14 +124,14 @@ header #bottom {
 }
 
 #skype{
-	width: 6%;
+	width: 5%;
 	position: absolute;
 	margin-top: 2%;
 }
 
 #skype-2{
 	position: absolute;
-	margin-top: 11%;
+	margin-top: 3%;
 	margin-left: 6%;
 }
 
@@ -146,32 +142,6 @@ header #bottom {
 	margin-top:40px;
 }
 
-/* About */
-
-
-.about-line{
-	float:left;
-	clear:both;
-	font-size: 20px;
-	color: white;
-	background-color: black; 	
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-left:1%;
-	padding-right: 1%;
-}
-
- .first{
-	padding-top: 10px;
-	color: #00AEEF;
-}
-
-/*productos*/
-#follow-keywords{
-	text-align: center;
-}
-
-
 /*servicios*/
 
 #radiografia, #identidad, #combustible, #reframe{
@@ -181,17 +151,24 @@ header #bottom {
 }
 
 
-#clientes {
-	width: 100%;
-	text-align: center;
-	margin-top: 200px;
+#radiografia{
+		
 }
+
+#identidad{
+	}
+
+ 
+#combustible{
+	
+}
+ 
+#reframe{
+	
+}
+
 
 /* Footer */
-.fooarriba span {
-	font-size: 20px;
-}
-
 footer {
 	color: #FFF;
 	width: 100%;
@@ -207,10 +184,7 @@ footer * {
 }
 
 footer #fooarriba {
-	
-	float: right;
-	background-color: black;
-	color: white;
+	width: 100%
 }
 
 footer #fooarriba img{
