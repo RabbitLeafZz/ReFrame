@@ -167,12 +167,18 @@ header #bottom {
 }
 
 /*productos*/
-
+#productos{
+	margin-top: 10%;
+}
 
 #follow-keywords{
 	text-align: center;
 	display: table-cell;
 	vertical-align: middle;
+	/*Para navegadores que no soportan RGBa no se dibuja fondo*/
+	background: none;
+	background: rgba(0,0,0,0.5);
+	top: 10%;
 }
 
 #follow-keywords img{
