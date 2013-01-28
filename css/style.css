@@ -167,8 +167,17 @@ header #bottom {
 }
 
 /*productos*/
+
+
 #follow-keywords{
 	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#follow-keywords img{
+	width: 45%;
+	vertical-align: middle;
 }
 
 
