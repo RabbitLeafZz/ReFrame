@@ -1,0 +1,39 @@
+@import url(http://fonts.googleapis.com/css?family=Satisfy|Open+Sans+Condensed:700,300);
+/* General Demo Style */
+
+*,
+*:before,
+*:after { 
+    padding: 0; 
+    margin: 0; 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+}
+.main {
+    min-height: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1
+}

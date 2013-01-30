@@ -13,13 +13,18 @@
 		<!--<link href="css/bgstretcher.css" rel="stylesheet" type="text/css" />  -->
 		<link href="css/masonry.css" rel="stylesheet" type="text/css" />
 		<link href="css/lightbox.css" rel="stylesheet" />
+		<link href="css/pfold.css"  rel="stylesheet" type="text/css" />
+		<link href="css/pfold2.css"  rel="stylesheet" type="text/css" />
+		<link href="css/demo.css"  rel="stylesheet" type="text/css" />
+		
 		<!-- JS -->
-		<link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+		<link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' />
 		<!--	<link href="css/screen.css" rel="stylesheet"> -->
 		<script src="js/jquery-1.8.2.min.js"></script>
 		<script src="js/jquery.queryloader2.js"></script>
 		<script src="js/bgstretcher.js"></script> 
 		<script src="js/lightbox.js"></script>
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
 		
 		<!-- <script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script> -->
 		<script type="text/javascript" src="http://www.paginaswebynnova.com/lib/js-ynnova.js"></script>
@@ -29,6 +34,7 @@
 
 		<script>
 			var primero = true;
+			
 			$(document).ready(function(){
 
 				$("body").queryLoader2({ 
@@ -37,12 +43,15 @@
                 });
 
 				$(".secciones").hide();
-				$('#home').show(3000);
+				$('#home').show(500);
 
 				$('.menu-click').click(function(event) {
 					event.preventDefault();
+					
 					var mostrar = $(this).attr('id');
+					
 					mostrar = mostrar.replace('menu-', '');
+					
 					$('.secciones').each(function() {
 						if ($(this).css('display') == 'block') {
 							$(this).hide('slow', function() {
@@ -97,6 +106,8 @@
 							});
 						}
 					});
+					
+					
 				});
    			});
 		</script>
@@ -162,7 +173,7 @@
 						<div id="menu-productos" class="menu-click" style="cursor:pointer;" >PRODUCTOS</div>
 						<div id="menu-clientes" class="menu-click" style="cursor:pointer;" >CLIENTES</div>
 						<div id="menu-casos" class="menu-click" style="cursor:pointer;" >CASOS</div>
-						<!--<div id="menu-team" class="menu-click" style="cursor:pointer;" >TEAM</div>-->
+						<div id="menu-team" class="menu-click" style="cursor:pointer;" >TEAM</div>
 						<div id="menu-contacto" class="menu-click" style="cursor:pointer;" >CONTACTO</div>
 					</div>
 				
@@ -246,7 +257,7 @@
          	<!-- PRODUCTOS -->
           	 <div id="productos" class="secciones">
 				<div id="follow-keywords"  >
-					<img src="images/productos/logo-pick-1-800-px.png" />
+					<a href="http://pick1.com"><img src="images/productos/logo-pick-1-800-px.png" /></a>
 					<img src="images/productos/FK1.png" />
 				</div>
 			</div>
@@ -293,15 +304,16 @@
 					<a href="images/casos/16.png" rel="lightbox" title="Pickcel Mobile App"> <img src="images/casos/16.png" /> <p>Pickcel Mobile App</p> </a>
 				  </div>
 				  
-			  
-			  
-				
 				  <div class="photo solid">
-					<a href="images/casos/1.png" rel="lightbox" title="Lan Chile Juego Navidad"> <img src="images/casos/1.png" /> <p> Lan Chile Juego Navidad </p> </a>
+					<a href="images/casos/LanSanta01.png" rel="lightbox" title="Lan Chile Juego Navidad"> <img src="images/casos/LanSanta01.png" /> <p> Lan Chile Juego Navidad </p> </a>
 				  </div>
-				
-				<div class="photo solid">
-					<a href="images/casos/2.png" rel="lightbox" title="Ciclon Tarjetas Mas"> <img src="images/casos/2.png" /> <p> Ciclon Tarjetas Mas </p></a>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/LanSanta02.png" rel="lightbox" title="Lan Chile Juego Navidad"> <img src="images/casos/LanSanta02.png" /> <p> Lan Chile Juego Navidad </p> </a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/LanSanta03.png" rel="lightbox" title="Lan Chile Juego Navidad"> <img src="images/casos/LanSanta03.png" /> <p> Lan Chile Juego Navidad </p> </a>
 				  </div>
 				  
 				  <div class="photo solid">
@@ -309,28 +321,39 @@
 				  </div>
 				  
 				  <div class="photo solid">
-					<a href="images/casos/4.png" rel="lightbox" title="sinoscasamos.cl"> <img src="images/casos/4.png" /> <p>sinoscasamos.cl</p></a>
+					<a href="images/casos/sinoscasamos01.png" rel="lightbox" title="sinoscasamos.cl"> <img src="images/casos/sinoscasamos01.png" /> <p>sinoscasamos.cl</p></a>
 				  </div>
 				  
 				  <div class="photo solid">
-					<a href="images/casos/5.png" rel="lightbox" title="sinoscasamos.cl Blog"> <img src="images/casos/5.png" /> <p>sinoscasamos.cl Blog</p></a>
+					<a href="images/casos/sinoscasamos02.png" rel="lightbox" title="sinoscasamos.cl"> <img src="images/casos/sinoscasamos02.png" /> <p>sinoscasamos.cl</p></a>
 				  </div>
 				  
+				  <div class="photo solid">
+					<a href="images/casos/sinoscasamos03.jpg" rel="lightbox" title="sinoscasamos.cl"> <img src="images/casos/sinoscasamos03.jpg" /> <p>sinoscasamos.cl</p></a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/MysteryLand01.png" rel="lightbox" title="Mystery Land Facebook App"> <img src="images/casos/MysteryLand01.png" /><p>Mystery Land Facebook App</p> </a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/MysteryLand02.png" rel="lightbox" title="Mystery Land Facebook App"> <img src="images/casos/MysteryLand02.png" /><p>Mystery Land Facebook App</p> </a>
+				  </div>
+				  
+				  <div class="photo solid">
+					<a href="images/casos/MysteryLand03.png" rel="lightbox" title="Mystery Land Facebook App"> <img src="images/casos/MysteryLand03.png" /><p>Mystery Land Facebook App</p> </a>
+				  </div>
 
 				  <div class="photo solid">
-					<a href="images/casos/10.png" rel="lightbox" title="Mystery Land Facebook App"> <img src="images/casos/10.png" /><p>Mystery Land Facebook App</p> </a>
-				  </div>
-
-				  <div class="photo solid">
-					<a href="images/casos/11.png" rel="lightbox" title="Creamfield Facebook App"> <img src="images/casos/11.png" /> <p>Creamfield Facebook App</p></a>
+					<a href="images/casos/Creamfields.jpg" rel="lightbox" title="Creamfield Facebook App"> <img src="images/casos/Creamfields.jpg" /> <p>Creamfield Facebook App</p></a>
 				  </div>
 				  
 				  <div class="photo solid">
-					<a href="images/casos/13.png" rel="lightbox" title="Columbia Mobile App"> <img src="images/casos/13.png" /> <p>Columbia Mobile App</p></a>
+					<a href="images/casos/ColumbiaReport01.png" rel="lightbox" title="Columbia Mobile App"> <img src="images/casos/ColumbiaReport01.png" /> <p>Columbia Mobile App</p></a>
 				  </div>
 				  
-				  <div class="photo solid">
-					<a href="images/casos/14.png" rel="lightbox" title="Columbia Mobile App"> <img src="images/casos/14.png" /> <p>Columbia Mobile App</p></a>
+				  <div class="photo">
+					<a href="images/casos/ColumbiaReport02.png" rel="lightbox" title="Columbia Mobile App"> <img src="images/casos/ColumbiaReport02.png" /> <p>Columbia Mobile App</p></a>
 				  </div>
 
 				
@@ -413,6 +436,284 @@
 			  </script>
           	</div>
           	
+			<!--TEAM-->
+			<div id="team" class="secciones" >
+			<section class="main pfold">
+				<div id="grid" class="grid clearfix">			
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/hans.jpg" alt="image01" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/hans.jpg" alt="image01-large" />
+							<div class="title"><h4>Hans Buckel O.</h4> 
+							CEO/Co-Funder <br/>
+							@Hansbuckel (Twitter y Facebook) <br/>
+							<a href="http://drbl.in/dMLS" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/valentin.jpg" alt="image02" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/valentin.jpg" alt="image02-large" />
+							<div class="title"><h4>Valentin Martinez</h4>  
+							Creativo en contenidos digiltales <br/>
+							Mail: valentinm@reframe.cl <br/>
+							Facebook: valenzzio <br/>
+							Twitter: @valenzio <br/>
+							<a href="http://www.linkedin.com/pub/valentin-martinez-henriquez/27/7a0/26a" class="icon-link"></a>
+							</div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/ric.jpg" alt="image03" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/ric.jpg" alt="image03-large" />
+							<div class="title"><h4>Ricardo Kennedy V.</h4>
+						Web Tech Programer/Ninja Proyect Manager I+D. <br/>
+						Mail: ricardo.kennedy@reframe.cl <br/>
+						Twitter: @RkennedyV <br/>
+						Skype: ricardokennedy11 <br/>
+							<a href="http://cl.linkedin.com/pub/ricardo-kennedy/64/903/847/" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+					
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/manu.jpg" alt="image01" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/manu.jpg" alt="image01-large" />
+							<div class="title">
+							<h4>Jose Manuel Contador</h4>
+							Social Media Strategist
+							Mail: manuel@reframe.cl
+							<a href="mailto:manuel@reframe.cl" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/jp.jpg" alt="image02" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/jp.jpg" alt="image02-large" />
+							<div class="title">
+							<h4>JP Hurtado</h4> 
+							Community Manager <br/>
+							Mail: jp.hurtado@reframe.cl <br/>
+							Twitter: @jootapg <br/>
+							Facebook: jootapg <br/>
+							Skype: jootapg
+							<a href="mailto:jp.hurtado@reframe.cl" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/seba.jpg" alt="image03" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/seba.jpg" alt="image03-large" />
+							<div class="title">
+							<h4>Sebastián Morales Navarro</h4> 
+							Social Media Strategist <br/>
+							smorales@reframe.cl <br/>
+							Skype @seba.reframe <br/>
+							<a href="mailto:smorales@reframe.cl" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+					
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/lee.jpg" alt="image01" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/lee.jpg" alt="image01-large" />
+							<div class="title"><h4>Nicolas Duran S.</h4>
+							Co-Founder & CEO<br/>
+							nicolasduran@reframe.cl<br/>
+							@nicolasdurans (Skype & Twitter) 
+							<a href="mailto:nicolasduran@reframe.cl" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/pancho.jpg" alt="image01" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/pancho.jpg" alt="image01-large" />
+							<div class="title"><h4>Francisco Paredes</h4>francisco@reframe.cl <a href="mailto:francisco@reframe.cl" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+				
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/leo.jpg" alt="image02" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/leo.jpg" alt="image02-large" />
+							<div class="title">
+							<h4>Leonardo Olivares</h4>
+							Senior Programer/Xcode <br/>
+							Mail:batman@reframe.cl
+							<a href="mailto:batman@reframe.cl" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/coke.jpg" alt="image03" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/coke.jpg" alt="image03-large" />
+							<div class="title"><h4>Jorge Ramirez Haseem</h4> Social Media PR.</div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->	
+					
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/nadao.gif" alt="image03" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/nadao.png" alt="image03-large" />
+							<div class="title"><h4> Daniel Aspillaga</h4>
+							Web & App Designer <br/>
+							Mail: nadao@reframe.cl<br/>
+							<a href="http://nadaoknows.com" class="icon-link"></a>
+							</div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->	
+					
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/team/thumbs/roberto.jpg" alt="image01" />
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/team/large/roberto.jpg" alt="image01-large" />
+							<div class="title"><h4>Roberto Díaz</h4> Jr Programmer<br/> roberto.diazu@alumnos.usm.cl<a href="mailto:roberto.diazu@alumnos.usm.cl" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+					
+
+					
+				
+				</div><!-- / grid -->
+				
+			</section>
+				
+				<script type="text/javascript" src="js/jquery.pfold.js"></script>
+				<script type="text/javascript">
+					$(function() {
+
+						// say we want to have only one item opened at one moment
+						var opened = false;
+						
+						$( '#grid > div.uc-container' ).each( function( i ) {
+
+							var $item = $( this ), direction;
+
+							switch(i){
+								case 0:
+								case 1:
+									direction = ['right','bottom'];
+									break;
+								case 2:
+								case 3:
+									direction = ['left','bottom'];
+									break;
+								case 4:
+								case 5:
+									direction = ['right','top'];
+									break;
+								case 6:
+								case 7:
+									direction = ['left','top'];
+									break;
+								case 8:
+								case 9:
+									direction = ['top','right'];
+									break;
+								case 10:
+								case 11:
+									direction = ['top','left'];
+									break;
+							}
+						
+							
+							
+							
+							/*
+							if( i < 6 )
+							switch( i % 3 ) {
+								case 0 : direction = ['right','bottom']; break;
+								case 1 : direction = ['right','bottom']; break;
+								case 2 : direction = ['left','bottom']; break;
+							}
+							else
+							switch( i % 3 ) {
+								case 0 : direction = ['right','top']; break;
+								case 1 : direction = ['right','top']; break;
+								case 2 : direction = ['left','top']; break;
+							}
+							*/
+							var pfold = $item.pfold( {
+								folddirection : direction,
+								speed : 300,
+								onEndFolding : function() { opened = false; },
+							} );
+
+							$item.find( 'span.icon-eye' ).on( 'click', function() {
+
+								if( !opened ) {
+									opened = true;
+									pfold.unfold();
+								}
+
+
+							} ).end().find( 'span.icon-cancel' ).on( 'click', function() {
+
+								pfold.fold();
+
+							} );
+
+						} );
+						
+					});
+				</script>
+			</div>
+			
           	<!--CONTACTO-->
           	<div id="contacto" class="secciones">
 					<div id="sub-contacto"  class="sub-secciones-contacto" style="display:"> 
